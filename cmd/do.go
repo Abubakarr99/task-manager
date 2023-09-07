@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"github.com/spf13/cobra"
 	"strconv"
+	"task-manager/db"
 )
 
 // doCmd represents the do command
@@ -23,7 +24,12 @@ var doCmd = &cobra.Command{
 				ids = append(ids, id)
 			}
 		}
-		fmt.Println(ids)
+		tasks, err := db.ReadTasks()
+		if err != nil {
+			fmt.Println("something went wrong", err)
+			return
+		}
+		_ = tasks
 	},
 }
 

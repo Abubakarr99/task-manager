@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/mitchellh/go-homedir"
 	"path/filepath"
+	"task-manager/cmd"
 	"task-manager/db"
 )
 
